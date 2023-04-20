@@ -1,32 +1,281 @@
-# Prerequisites
-*.d
+#include <iostream>
+#include <string>
+#include <windows.h>
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+using namespace std;
 
-# Precompiled Headers
-*.gch
-*.pch
+class Student {
+private:
+    string name;
+    int age;
+    string id;
+public:
+    void registerStudent(string studentName, int studentAge, string studentId) {
+        name = studentName;
+        age = studentAge;
+        id = studentId;
+    }
+};
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+int main() {
+	Student student;
 
-# Fortran module files
-*.mod
-*.smod
+    string name;
+    string familia;
+    int age;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+    cout << "Atynyz: ";
+    cin >> name;
 
-# Executables
-*.exe
-*.out
-*.app
+    cout << "familianyz:";
+    cin >> familia;
+    
+    cout << "Jasynyzdy engiziniz: ";
+    cin >> age;
+
+    student.registerStudent(name, age, familia);
+
+    system("cls");
+    
+    cout << "Tirkey satti otti!" << endl;
+    
+	int score = 0;
+	cout << "-"<<"IQ dengein anyktau ushin kelesi syraktarga jayap beriniz"<<"-\n"<<endl;
+	
+	//1
+	cout << "Sizdin jasynyz: ";
+	cout<<age<<endl;
+	if (age >= 19)
+		score += 1;
+	else if (age >= 13 && age <= 18)
+		score += 2;
+	else if (age >= 0 && age <= 12)
+		score += 3;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<< endl;
+	//2
+	cout << "Sizdin biliminiz? \n";
+	cout << "1. Bakalavriat\n";
+	cout << "2. Magistr\n";
+	cout << "3.Doktorantyra nemese odan jogary\n";
+	int education;
+	cout<<"Jayap:";
+	cin >> education;
+	if (education == 3) 
+		score += 3;
+	else if (education == 2) 
+		score += 2;
+	else 
+		score += 1;
+	system("cls");
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	//3
+	cout << "Siz mektepte nemese yniversitette sportpen shugyldandynyz ba nemese shahmat oinadynyz ba \n";
+	cout << "1. Jok\n";
+	cout << "2. Ia, biraq kasibi dengeide emes\n";
+	cout << "3.Ia, kasibi dengeide \n";
+	int activity;
+	cout<<"Jayap:";
+	cin >> activity;
+	if (activity == 3) 
+		score += 2;
+	else if (activity == 2) 
+		score += 1;
+	system("cls");
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	//4
+	cout << "Otken jyly qansha kitap oqydynyz?"<<endl;
+	int books;
+	cout<<"Jayap:";
+	cin >> books;
+	if (books >= 20) 
+		score += 2;
+	else if (books >= 10) 
+		score += 1;
+	system("cls");
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	//5
+	cout << "Eger belgili bolsa, sizdin IQ dengeiniz qansha?"<<endl;
+	int iq;
+	cout<<"Jayap:";
+	cin >> iq;
+	if (iq > 130) 
+		score += 3;
+	else if (iq > 110) 
+		score += 2;
+	else if (iq > 90) 
+		score += 1;
+	system("cls");	
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	//6
+	cout << "Siz qandai bagdarlama tilderin bilesiz? \n";
+	cout << "1. Eshqandai bagdarlamalay tilin bilmeimin\n";
+	cout << "2. Bir nemese birneshe bagdarlamalay tilderin bilemin, biraq ortasha\n";
+	cout << "3. Men tajiribeli bagdarlamashymyn\n";
+	int programming;
+	cout<<"Jayap:";
+	cin >> programming;
+	if (programming == 3) 
+		score += 3;
+	else if (programming == 2) 
+		score += 2;
+	else 
+		score += 1;
+	system("cls");	
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	//7
+	cout << "Siz krosvordtar nemese sydoky siaqty jumbaqtardy qanshalyqty jii oinaisyz? \n";
+	cout << "1. Sirek nemese eshqashan\n";
+	cout << "2. Keide\n";
+	cout << "3. Unemi\n";
+	int puzzles;
+	cout<<"Jayap:";
+	cin >> puzzles;
+	if (puzzles == 3) 
+		score += 2;
+	else if (puzzles == 2) 
+		score += 1;
+	system("cls");	
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "Siz logikalyq oilaydy qajet etetin matematikalyq esepterdi nemese golovolomkalardy jii sheshesiz be? \n";
+	cout << "1. Sirek nemese eshqashan\n";
+	cout << "2. Keide\n";
+	cout << "3. Unemi\n";
+	int math;
+	cout<<"Jayap:";
+	cin >> math;
+	if (math == 3) 
+		score += 2;
+	else if (math == 2) 
+		score += 1;
+	system("cls");	
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	//9
+	cout << "Siz maqalalardy nemese kitaptardy qanshalyqty jii oqisyz? \n";
+	cout << "1. Sirek nemese eshqashan\n";
+	cout << "2. Keide\n";
+	cout << "3. Unemi\n";
+	int science;
+	cout<<"Jayap:";
+	cin >> science;
+	if (science == 3) 
+		score += 2;
+	else if (science == 2) 
+		score += 1;
+	system("cls");	
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	//10
+	cout << "Komputerler men tehnologialarmen tajiribeniz qandai? \n";
+	cout << "1. Komputermen jumys tajiribesi joq\n";
+	cout << "2. Komputerlermen jane tehnologialarmen jumys isteydin negizgi tajiribe bar\n";
+	cout << "3. Men komputerler men tehnologialardyn tajiribeli qoldanyshysymyn \n";
+	int tech;
+	cout<<"Jayap:";
+	cin >> tech;
+	if (tech == 3) 
+		score += 2;
+	else if (tech == 2) 
+		score += 1;
+	system("cls");
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	//11
+	cout<<"Tapsyrmalarga kosheiik"<<endl;
+	cout<<endl;
+	cout<<"Otkizip algan sandy salynyz:"<<endl;
+	cout<<"2 5 8 11 ?"<<endl;
+	int ecep1;
+	cout<<"Jayap:";
+	cin>>ecep1;
+	if(ecep1==14){
+		score+=2;
+	}
+	else 
+		score+=0;
+	system("cls");	
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	//12
+	cout<<"San qataryn jalgastyrynyz."<<endl;
+	cout<<"172 84 40 18 ?"<<endl;
+	int ecep2;
+	cout<<"Jayap:";
+	cin>>ecep2;
+	if(ecep2==7)
+		score+=2;
+	else
+		score+=0;
+	system("cls");	
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	//13
+	cout<<"San qataryn jalgastyrynyz."<<endl;
+	cout<<"18 20 24 32 ?"<<endl;
+	int ecep3;
+	cout<<"Jayap:";
+	cin>>ecep3;
+	if(ecep3==48)
+		score+=2;
+	else
+		score+=0;
+	system("cls");	
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	//14
+	cout<<"San qataryn jalgastyrynyz."<<endl;
+	cout<<"64 48 40 36 34 ?"<<endl;
+	int ecep4;
+	cout<<"Jayap:";
+	cin>>ecep4;
+	if(ecep4==33)
+		score+=2;
+	else 
+		score+=0;
+	system("cls");	
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	//15
+	cout<<"Tusip kalgan sandy tabunuz."<<endl;
+	cout<<"11 12 14 ? 26 42"<<endl;
+	int ecep5;
+	cout<<"Jayap:";
+	cin>>ecep5;
+	if(ecep5==18)
+		score+=2;
+	else
+		score+=0;
+	system("cls");
+	//16
+	cout<<"9 sany bir men juz arasynda qansha ret kezdesedi?"<<endl;
+	cout<<"- 20"<<endl;
+	cout<<"- 30"<<endl;
+	cout<<"- 10"<<endl;
+	cout<<"- 15"<<endl;
+	int ecep6;
+	cout<<"Jayap:";
+	cin>>ecep6;
+	if(ecep6==20)
+		score+=2;
+	else
+		score+=0;
+	system("cls");
+
+	score = score * 4;
+	cout << "Stydenttin jalpy upaiy "<<familia<<" "<<name<<"\t:\t"<< score << endl;
+	if (score >= 131) {
+		cout << "Bagalay: Daryndylyq" << endl;
+	}
+	else if (score >= 121 && score<=130) {
+		cout << "Bagalay: Jarqyn intellekt" << endl;
+	}
+	else if (score >= 111 && score<=120) {
+		cout << "Bagalay: Intellekt ortashadan jogary" << endl;
+	}
+	else if (score>=90 && score<=110){
+		cout << "Bagalay: IQ ortasha dengeii" << endl;
+	}
+	else if (score >= 80 && score <= 89) {
+		cout << "Bagalay: Ortasha IQ tomengi shekarasy" << endl;
+	}
+	else if (score >= 71 && score <= 79) {
+		cout << "Bagalay: Intellekt ortashadan tomen" << endl;
+	}
+	else {
+		cout << "Bagalay: Aqyl-oi kemistiginin belgisi" << endl;
+	}
+	return 0;
+}
